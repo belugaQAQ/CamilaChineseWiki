@@ -1,11 +1,15 @@
 ---
-title: Example Reference
+title: Camila Land 处刑名单
 description: A reference page in my new Starlight docs site.
 ---
 
-Reference pages are ideal for outlining how things work in terse and clear terms.
-Less concerned with telling a story or addressing a specific use case, they should give a comprehensive outline of what you're documenting.
+<div align="center">
 
-## Further reading
+![](/SB.jpg)
 
-- Read [about reference](https://diataxis.fr/reference/) in the Diátaxis framework
+### QQ号：3326912393
+
+### 名称：平凡的猫
+
+### Vedal赠送称号：BITCH
+</div>

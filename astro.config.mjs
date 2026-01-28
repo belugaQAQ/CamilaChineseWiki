@@ -6,21 +6,31 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: '皮奇堡中文Wiki',
+      		locales: {
+        		root: {
+          			label: '简体中文',
+          			lang: 'zh-CN',
+        			},
+      },
+			logo: {
+        	src: './src/assets/favicon.svg',
+      		},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: '人物',
+					autogenerate: { directory: 'guides' },
 				},
 				{
-					label: 'Reference',
+					label: '神秘区域',
 					autogenerate: { directory: 'reference' },
 				},
 			],
+			customCss: [
+        			'./src/styles/custom.css',
+      		],
 		}),
 	],
+	
 });

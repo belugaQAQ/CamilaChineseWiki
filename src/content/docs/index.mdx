@@ -1,40 +1,43 @@
 ---
-title: Welcome to Starlight
+title: 欢迎来到Impire非官方中文Wiki
 description: Get started building your docs site with Starlight.
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: 欢迎来到Impire非官方中文wiki🃏🍥，各位忠诚的Cimp！
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/Welcome.gif
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: 浏览Wiki
+      link: /guides/whoiscamila/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: 前往原版Wiki
+      link: https://impire.live/
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import LinkCardPlus from '../../components/LinkCardPlus.astro';
 
-## Next steps
-
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+<div class="cards-grid">
+<LinkCardPlus 
+  title="Camila是谁呀"
+  label="Camila是谁呀"
+  image="/whoismimi.jpg"
+  href="/guides/whoiscamila/"
+  description="Camila、Camimi、Mimi，快来认识一下我们调皮的VTuber雌小鬼吧！了解她的背景以及作为VTuber的历程。"
+/>
+<LinkCardPlus 
+  title="None"
+  label="None"
+  image="/favicon.svg"
+  href="/guides/whoiscamila/"
+  description="None"
+/>
+<LinkCardPlus 
+  title="None"
+  label="None"
+  image="/favicon.svg"
+  href="/guides/whoiscamila/"
+  description="None"
+/>
+</div>

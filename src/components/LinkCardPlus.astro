@@ -1,0 +1,207 @@
+---
+// src/components/LinkCardPlus.astro
+const { 
+  href = '#', 
+  label = '', 
+  description = '',
+  image,
+  imageAlt = '',
+  ...props 
+} = Astro.props;
+
+// 安全生成 ID（兼容 MDX）
+const idBase = label 
+  ? label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+  : 'linkcard';
+const titleId = `linkcard-${idBase}`;
+const hasTitle = !!label;
+const hasImage = !!image;
+const hasDescription = !!description;
+---
+
+<a 
+  href={href} 
+  class="link-card-plus"
+  aria-labelledby={hasTitle ? titleId : undefined}
+  {...props}
+>
+  <div class="card-inner">
+    {hasImage && (
+      <div class="card-image-wrapper">
+        <img 
+          src={image} 
+          alt={imageAlt || (hasTitle ? `Illustration for ${label}` : 'Card illustration')}
+          loading="lazy"
+          decoding="async"
+          class="card-image"
+        />
+      </div>
+    )}
+    
+    <div class="card-content">
+      {hasTitle && (
+        <h3 id={titleId} class="card-title">{label}</h3>
+      )}
+      {hasDescription && (
+        <p class="card-description">{description}</p>
+      )}
+    </div>
+    
+    <div class="card-arrow-icon">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor"
+        class="card-arrow-svg"
+      >
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="2" 
+          d="M17 8l4 4m0 0l-4 4m4-4H3" 
+        />
+      </svg>
+    </div>
+  </div>
+</a>
+
+<style>
+  .link-card-plus {
+    display: block;
+    height: 100%;
+    min-height: 280px; 
+    width: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(
+      to bottom right,
+      var(--sl-color-bg, #ffffff) 0%,
+      var(--sl-color-accent-low, rgba(139, 92, 246, 0.03)) 100%
+    );
+    border: 1px solid var(--sl-color-hairline, #e2e8f0);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    will-change: transform, box-shadow;
+  }
+
+  :global(:global([data-theme="dark"])) .link-card-plus {
+    background: var(--sl-color-bg-sidebar, var(--sl-color-bg, #0f172a));
+    border-color: var(--sl-color-hairline, #334155);
+  }
+
+  .link-card-plus:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 25px 50px -12px var(--sl-color-accent-low, rgba(139, 92, 246, 0.2)),
+      0 4px 12px var(--sl-color-shadow, rgba(0, 0, 0, 0.1));
+  }
+
+  :global(:global([data-theme="dark"])) .card-title {
+    color: var(--sl-color-text-light, #f1f5f9) ;
+  }
+  
+  .card-title {
+    color: var(--sl-color-text-light, #0f172a);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+
+  .card-description {
+    color: var(--sl-color-text-accent, #475569);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  :global([data-theme="dark"]) .card-title {
+    color: var(--sl-color-text-light, #f1f5f9) ;
+  }
+  
+  :global([data-theme="dark"]) .card-description {
+    color: var(--sl-color-text-accent, #cbd5e1);
+  }
+
+  .card-inner {
+    height: 100%;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .card-image-wrapper {
+    border-radius: 0.75rem; /* ≤ 卡片圆角 */
+    overflow: hidden;
+    height: 10rem;
+    margin-bottom: 1rem; /* 图片与文字间距 */
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  :not(:global([data-theme="dark"])) .link-card-plus:hover .card-image {
+    filter: brightness(1.1) contrast(1.05);
+  }
+
+  :global(:global([data-theme="dark"])) .link-card-plus .card-image,
+  :global(:global([data-theme="dark"])) .link-card-plus:hover .card-image {
+    filter: none !important;
+  }
+
+  .card-arrow-icon {
+    position: absolute;
+    bottom: 1.25rem; /* 与 padding 一致 */
+    right: 1.25rem;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .link-card-plus:hover .card-arrow-icon {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+  .card-arrow-svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--sl-color-text-inactive, #64748b);
+  }
+
+  :global(:global([data-theme="dark"])) .card-arrow-svg {
+    color: var(--sl-color-text-inactive, #94a3b8);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .link-card-plus,
+    .card-image,
+    .card-arrow-icon {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .link-card-plus:hover {
+      transform: none;
+    }
+    
+    .card-inner {
+      padding: 1rem; /* 移动端稍小 */
+    }
+    
+    .card-arrow-icon {
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+</style>
