@@ -1,49 +1,20 @@
-# Starlight Starter Kit: Basics
+# 皮奇堡中文Wiki
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+[![使用 Starlight 构建](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
-```
-npm create astro@latest -- --template starlight
-```
+## 🎇Website
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+**[Impire非官方中文Wiki](wiki.camimi.icu)**
 
-## 🚀 Project Structure
+## 🧞 Use it
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+所有命令均需在项目根目录下通过终端执行：
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+| 命令                      | 作用                                         |
+| :------------------------ | :------------------------------------------- |
+| `npm install`             | 安装依赖                                     |
+| `npm run dev`             | 启动本地开发服务器（地址：`localhost:4321`） |
+| `npm run build`           | 构建生产环境站点至 `./dist/` 目录            |
+| `npm run preview`         | 在本地预览构建结果，便于部署前检查           |
+| `npm run astro ...`       | 执行 Astro CLI 命令，如 `astro add`、`astro check` |
+| `npm run astro -- --help` | 获取 Astro CLI 的帮助信息                    |
