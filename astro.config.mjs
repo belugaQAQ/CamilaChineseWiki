@@ -16,11 +16,16 @@ export default defineConfig({
 			logo: {
         	src: './src/assets/favicon.svg',
       		},
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/belugaQAQ/CamilaChineseWiki' }],
 			sidebar: [
 				{
 					label: '人物',
-					autogenerate: { directory: 'guides' },
+					items: [
+						{
+          					slug: 'guides/whoiscamila',
+							badge: { text: 'Finish!!!', variant: 'success' },
+        					},
+					]
 				},
 				{
 					label: '神秘区域',
