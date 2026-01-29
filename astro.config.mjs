@@ -31,13 +31,26 @@ export default defineConfig({
         					},
 						{
           					slug: 'guides/whatiscimp',
-							badge: { text: 'New', variant: 'tip' },
         					},
 					]
 				},
 				{
-					label: '神秘区域',
-					autogenerate: { directory: 'reference' },
+					label: '背景故事',
+					items: [
+						{
+          					slug: 'lore/contract',
+							badge: { text: 'Finish', variant: 'caution' },
+        					},
+					]
+				},
+				{	
+					label: '如何帮助我们',
+					items: [
+						{
+          					slug: 'helpus/how-to-help',
+							badge: { text: 'New', variant: 'tip' },
+        					},
+					]
 				},
 			],
 			customCss: [
