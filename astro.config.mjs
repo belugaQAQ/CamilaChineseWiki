@@ -39,7 +39,10 @@ export default defineConfig({
 					items: [
 						{
           					slug: 'lore/contract',
-							badge: { text: 'Finish', variant: 'caution' },
+        					},
+						{
+          					slug: 'lore/cimpography',
+							badge: { text: 'New', variant: 'success' },
         					},
 					]
 				},
@@ -48,7 +51,7 @@ export default defineConfig({
 					items: [
 						{
           					slug: 'helpus/how-to-help',
-							badge: { text: 'New', variant: 'tip' },
+							badge: { text: 'Finish', variant: 'caution' },
         					},
 					]
 				},
