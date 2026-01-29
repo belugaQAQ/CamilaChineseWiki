@@ -4,7 +4,7 @@
 
 ## 🎇Website
 
-**[Impire非官方中文Wiki](wiki.camimi.icu)**
+**[Impire非官方中文Wiki](https://wiki.camimi.icu)**
 
 ## 🧞 Use it
 
