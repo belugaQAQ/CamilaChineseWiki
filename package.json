@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/starlight": "^0.37.4",
     "astro": "^5.6.1",
+    "astro-feelback": "^0.3.4",
     "sharp": "^0.34.2"
   }
 }

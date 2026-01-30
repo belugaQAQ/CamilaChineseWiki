@@ -1,10 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import overrideIntegration from "./src/overrideIntegration.mjs";
+
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
+		overrideIntegration(),
 		starlight({
 			title: '皮奇堡中文Wiki',
       		locales: {

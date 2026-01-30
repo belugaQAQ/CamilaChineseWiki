@@ -1,0 +1,15 @@
+---
+import FeelbackTaggedMessage from "astro-feelback/components/FeelbackTaggedMessage.astro";
+import "astro-feelback/styles/feelback.css";
+
+const CONTENT_SET_ID = "$content-set-id-from-panel";
+---
+
+<FeelbackTaggedMessage
+    contentSetId=2e725be8-9e07-4184-9537-5334a5b77fbc
+    preset="feedback"
+    title="你对这个Wiki有什么问题或建议吗?"
+    layout="reveal-message"
+    style={["bordered", "align-center", "width-md"]}
+    withEmail
+/>
