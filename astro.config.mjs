@@ -10,6 +10,7 @@ export default defineConfig({
 		overrideIntegration(),
 		starlight({
 			title: '皮奇堡中文Wiki',
+			description: '欢迎来到Impire非官方中文wiki🃏🍥，各位忠诚的Cimp！',
       		locales: {
         		root: {
           			label: '简体中文',
